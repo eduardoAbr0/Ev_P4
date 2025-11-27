@@ -35,8 +35,11 @@ android {
     }
 }
 
-dependencies {
     dependencies {
+        implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.22"))
+
+        implementation 'androidx.activity:activity:1.9.0'
+
         implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
 
         // Dependencies for working with Architecture components
@@ -64,4 +67,3 @@ dependencies {
         })
         androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
     }
-}
