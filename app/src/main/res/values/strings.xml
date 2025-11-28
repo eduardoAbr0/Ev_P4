@@ -2,6 +2,7 @@
     <string name="app_name">Exp_P4</string>
     <string name="add_word">Agregar</string>
     <string name="hint_word">Word...</string>
+    <string name="hint_filtro">Filtrar...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
 </resources>

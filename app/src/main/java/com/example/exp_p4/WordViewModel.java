@@ -22,4 +22,9 @@ public class WordViewModel extends AndroidViewModel {
     LiveData<List<Word>> getAllWords() { return mAllWords; }
 
     public void insert(Word word) { mRepository.insert(word); }
+
+    public LiveData<List<Word>> filtro(String text) {
+        return mRepository.filtro(text);
+    }
+
 }

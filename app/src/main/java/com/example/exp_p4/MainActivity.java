@@ -2,6 +2,9 @@ package com.example.exp_p4;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
 
     private WordViewModel mWordViewModel;
+    private EditText textFiltro;
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
@@ -47,6 +51,28 @@ public class MainActivity extends AppCompatActivity {
         mWordViewModel.getAllWords().observe(this, words -> {
             // Update the cached copy of the words in the adapter.
             adapter.submitList(words);
+        });
+
+        textFiltro = (EditText) findViewById(R.id.edit_filtro);
+        textFiltro.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String texto = s.toString();
+
+                mWordViewModel.filtro(texto).observe(MainActivity.this, words -> {
+                    adapter.submitList(words);
+                });
+            }
         });
     }
 

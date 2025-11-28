@@ -34,4 +34,9 @@ class WordRepository {
             mWordDao.insert(word);
         });
     }
+
+    LiveData<List<Word>> filtro(String text) {
+        return mWordDao.busquedaFiltro(text);
+    }
+
 }

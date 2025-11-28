@@ -22,7 +22,7 @@ public class NewWordActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_word);
-        mEditWordView = findViewById(R.id.edit_word);
+        mEditWordView = findViewById(R.id.edit_w);
 
         final Button button = findViewById(R.id.button_save);
         button.setOnClickListener(view -> {
